@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+  <section class="bg-slate-900 dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+        <h2 class="mb-2 text-xl font-semibold leading-none text-gray-900 md:text-2xl text-white">{{ lead.first_name }} {{ lead.last_name }}</h2>
+        <p class="mb-4 text-xl font-light leading-none text-gray-900 md:text-2xl text-white">AGE: {{ lead.age }}</p>
+        <dl>
+            <dt class="mb-2 font-semibold leading-none text-gray-900 text-white">Details</dt>
+            <dd class="mb-4 font-light text-gray-500 sm:mb-5 text-gray-50">{{ lead.description }}</dd>
+        </dl>
+        <dl class="flex items-center space-x-6">
+            <div>
+                <dt class="mb-2 font-semibold leading-none text-gray-900 text-white">Category</dt>
+                <dd class="mb-4 font-light text-gray-500 sm:mb-5 text-gray-50">{{ lead.category }}</dd>
+            </div>
+            <div>
+                <dt class="mb-2 font-semibold leading-none text-gray-900 text-white">Email</dt>
+                <dd class="mb-4 font-light text-gray-500 sm:mb-5 text-gray-50">{{ lead.email }}</dd>
+            </div>
+            <div>
+              <dt class="mb-2 font-semibold leading-none text-gray-900 text-white">Phone Number</dt>
+              <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-50">{{ lead.phone_number }}</dd>
+          </div>
+          <a href="{% url 'leads:leads-list' %}" class="ml-2 inline-flex items-center bg-blue-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Back to list
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </dl>
+    </div>
+  </section>
+{% endblock content %}
