@@ -19,6 +19,9 @@ from django.contrib import admin
 from django.urls import path, include
 from leads.views import LandingPage, SignupView
 from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, PasswordResetCompleteView
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', LandingPage.as_view(), name='landing-page'),
@@ -31,7 +34,7 @@ urlpatterns = [
     path('password_reset_done/', PasswordResetDoneView.as_view(), name='password_reset_done'), #here the 'name' is case sensitive, specific name should be used
     path('password_reset_complete/', PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('signup/', SignupView.as_view(), name = "signup"),
-
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon/favicon.ico'))),
 ]
 
 if settings.DEBUG:
