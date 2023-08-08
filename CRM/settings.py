@@ -11,10 +11,9 @@ READ_DOT_ENV_FILE = env.bool("READ_DOT_ENV_FILE", default=True)
 if READ_DOT_ENV_FILE:
     environ.Env.read_env()
 
-
+DEBUG = env('DEBUG')
 SECRET_KEY=env('SECRET_KEY')
 
-DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
 
@@ -130,8 +129,10 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 AUTH_USER_MODEL = 'leads.User'
 
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
+STATIC_ROOT = "static_root"
 
 
 
