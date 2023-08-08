@@ -7,7 +7,7 @@ env = environ.Env()
 
 # read th .env file
 
-READ_DOT_ENV_FILE = env.bool("READ_DOT_ENV_FILE", default=False)
+READ_DOT_ENV_FILE = env.bool("READ_DOT_ENV_FILE", default=True)
 if READ_DOT_ENV_FILE:
     environ.Env.read_env()
 
