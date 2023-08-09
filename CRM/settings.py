@@ -15,7 +15,7 @@ DEBUG = env('DEBUG')
 SECRET_KEY=env('SECRET_KEY')
 
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -130,7 +130,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 AUTH_USER_MODEL = 'leads.User'
 
 STATICFILES_DIRS = [
-    BASE_DIR/'static'
+    os.path.join(BASE_DIR/'static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
