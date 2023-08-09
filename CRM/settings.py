@@ -16,8 +16,6 @@ if READ_DOT_ENV_FILE:
 DEBUG = env('DEBUG')
 SECRET_KEY=env('SECRET_KEY')
 
-print(DEBUG, SECRET_KEY)
-
 
 ALLOWED_HOSTS = ['*']
 
