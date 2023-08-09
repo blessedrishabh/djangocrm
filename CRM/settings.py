@@ -13,8 +13,8 @@ READ_DOT_ENV_FILE = env.bool("READ_DOT_ENV_FILE", default=False)
 if READ_DOT_ENV_FILE:
     environ.Env.read_env()
 
-DEBUG = env('DEBUG')
-SECRET_KEY=env('SECRET_KEY')
+DEBUG = False
+SECRET_KEY= 'ps2gm%43-jd6a2_l@q=3d*dki!=zbz0j3+_krww@'
 
 
 ALLOWED_HOSTS = ['*']
