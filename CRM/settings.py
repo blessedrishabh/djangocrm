@@ -14,7 +14,7 @@ if READ_DOT_ENV_FILE:
     environ.Env.read_env()
 
 DEBUG = False
-SECRET_KEY= 'ps2gm%43-jd6a2_l@q=3d*dki!=zbz0j3+_krww@'
+SECRET_KEY= 'cvnx7i7ls=ps2gm%43-jd6a2_l@q=3d*dki!=zbz0j3+_krww@'
 
 
 ALLOWED_HOSTS = ['*']
