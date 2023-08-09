@@ -34,7 +34,7 @@ urlpatterns = [
     path('password_reset_done/', PasswordResetDoneView.as_view(), name='password_reset_done'), #here the 'name' is case sensitive, specific name should be used
     path('password_reset_complete/', PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('signup/', SignupView.as_view(), name = "signup"),
-    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon/favicon.ico'))),
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon_io/favicon.ico'))),
 ]
 
 if settings.DEBUG:
