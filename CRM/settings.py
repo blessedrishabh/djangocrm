@@ -1,6 +1,8 @@
 from pathlib import Path
 import environ
 import os
+import dj_database_url
+from decouple import config
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 env = environ.Env(
@@ -13,8 +15,8 @@ READ_DOT_ENV_FILE = env.bool("READ_DOT_ENV_FILE", default=False)
 if READ_DOT_ENV_FILE:
     environ.Env.read_env()
 
-DEBUG = False
-SECRET_KEY= 'cvnx7i7ls=ps2gm%43-jd6a2_l@q=3d*dki!=zbz0j3+_krww@'
+DEBUG = env('DEBUG')
+SECRET_KEY=env('SECRET_KEY')
 
 
 ALLOWED_HOSTS = ['*']
@@ -82,14 +84,14 @@ WSGI_APPLICATION = 'CRM.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD':env('DB_PASSWORD'),
-        'HOST':env('DB_HOST'),
-        'PORT':env('DB_PORT'),
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD':'vIpvpjsKBQ5mjcwaiLp7',
+        'HOST':'containers-us-west-190.railway.app',
+        'PORT':'7824',
     }
 }
-
+DATABASES['default']=dj_database_url.config()
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -134,7 +136,8 @@ AUTH_USER_MODEL = 'leads.User'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR/'static')
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 
 
