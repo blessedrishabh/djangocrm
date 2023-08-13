@@ -25,7 +25,7 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', LandingPage.as_view(), name='landing-page'),
-    path('leads/leads/', include('leads.urls', namespace='leads')),
+    path('leads/', include('leads.urls', namespace='leads')),
     path('agents/', include('agents.urls', namespace='agents')),
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name = "logout" ),
