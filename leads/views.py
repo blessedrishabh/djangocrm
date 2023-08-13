@@ -28,7 +28,7 @@ class LandingPage(TemplateView):
 #class based List View
 class LeadListView(LoginRequiredMixin,ListView):
 
-    template_name = "leads\leads_list.html"
+    template_name = "leads/leads_list.html"
     context_object_name = "lead"
 
     def get_queryset(self):
