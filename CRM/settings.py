@@ -141,7 +141,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 
 
-LOGIN_REDIRECT_URL = "/leads/leads/"
+LOGIN_REDIRECT_URL = "/leads/lead_list.html"
 LOGIN_URL = '/login'
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 CRISPY_TEMPLATE_PACK = 'tailwind'
