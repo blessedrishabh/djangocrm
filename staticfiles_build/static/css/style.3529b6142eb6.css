@@ -1,0 +1,52 @@
+.dustbin {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #1b1515;
+    border: 2px solid #292121;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dustbin:before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    bottom: 2px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+    border-radius: 2px;
+  }
+
+  .dustbin:after {
+    content: "";
+    position: absolute;
+    left: 9px;
+    bottom: 4px;
+    width: 4px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 1px;
+  }
+
+  /* To hide the underline on the anchor tag */
+  a {
+    text-decoration: none;
+  }
+  .zoom {
+      transition: transform .2s;
+      margin: 0 auto;
+      }
+
+      .zoom:hover {
+      -ms-transform: scale(1.3); /* IE 9 */
+      -webkit-transform: scale(1.3); /* Safari 3-8 */
+      transform: scale(1.3); 
+      }
+.vertical-line {
+  border-left: 1px solid black;
+  height: 100px;
+  width: 1px;
+  }
