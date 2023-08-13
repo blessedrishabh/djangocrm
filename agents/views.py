@@ -17,7 +17,7 @@ class AgentListView(OrganizerAndLoginRequiredMixin, generic.ListView ):
         return Agent.objects.filter(organization = organization)
     
 class AgentCreateView(OrganizerAndLoginRequiredMixin, generic.CreateView):
-    template_name = 'agents/agent_create.html'
+    template_name = "agents/agent_create.html"
     form_class = AgentCreateForm
 
     def get_success_url(self):
@@ -47,12 +47,12 @@ class AgentCreateView(OrganizerAndLoginRequiredMixin, generic.CreateView):
         return super(AgentCreateView, self).form_valid(form)
     
 class AgentDetailView(OrganizerAndLoginRequiredMixin, generic.DetailView):
-    template_name = 'agents/agent_detail.html'
+    template_name = "agents/agent_detail.html"
     queryset = Agent.objects.all()
     context_object_name = 'agent'
 
 class AgentUpdateView(OrganizerAndLoginRequiredMixin, generic.UpdateView):
-    template_name = 'agents/agent_update.html'
+    template_name = "agents/agent_update.html"
     queryset = Agent.objects.all()
     form_class = AgentCreateForm
 
