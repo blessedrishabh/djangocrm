@@ -58,7 +58,7 @@ class LeadListView(LoginRequiredMixin,ListView):
 
 
 class LeadDetailView(LoginRequiredMixin,DetailView):
-    template_name="leads\leads_details.html"
+    template_name="leads/leads_details.html"
     context_object_name="lead"
 
     def get_queryset(self):
@@ -77,7 +77,7 @@ class LeadDetailView(LoginRequiredMixin,DetailView):
 #     }
 #     return render(request, 'leads\leads_details.html', context)
 class LeadCreateView(OrganizerAndLoginRequiredMixin,CreateView):
-    template_name = "leads\lead_form.html"
+    template_name = "leads/lead_form.html"
     form_class = LeadModelForm
 
     def get_success_url(self):
@@ -109,7 +109,7 @@ class LeadCreateView(OrganizerAndLoginRequiredMixin,CreateView):
 #     return render(request,'leads\lead_form.html', context)
 
 class LeadUpdateView(OrganizerAndLoginRequiredMixin,UpdateView):
-    template_name= "leads\lead_update.html"
+    template_name= "leads/lead_update.html"
     form_class = LeadModelForm
     def get_success_url(self):
         return "/leads/leads"
