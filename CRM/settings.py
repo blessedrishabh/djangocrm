@@ -159,3 +159,9 @@ if not DEBUG:
     SECURE_HSTS_PRELOAD = True
     X_FRAME_OPTIONS = "DENY"
     ALLOWED_HOST = ['*']
+    EMAIL_HOST = "smtp.gmail.com"
+    EMAIL_HOST_USER = env('EMAIL_HOST')
+    EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+    EMAIL_PORT = env('EMAIL_PORT')
+    EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+    EMAIL_BACKENDS = 'django.core.mail.backends.smtp.EmailBackend'
